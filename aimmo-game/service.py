@@ -6,6 +6,7 @@ import sys
 
 import eventlet
 
+eventlet.sleep()
 eventlet.monkey_patch()
 
 import flask

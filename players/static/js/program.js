@@ -1,5 +1,3 @@
-
-
 $( document ).ready(function() {
     //CONSTANTS
     const DANGER_CLASS = 'alert-danger';
@@ -84,5 +82,3 @@ $( document ).ready(function() {
     });
 
 });
-
-

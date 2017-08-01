@@ -16,7 +16,7 @@
 <script type='text/javascript'>
 var Module = {
   TOTAL_MEMORY: 1000000000,
-  errorhandler: handler,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+  errorhandler: window.handler,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
   compatibilitycheck: null,
   backgroundColor: "#222C36",
   splashStyle: "Light",
@@ -27,6 +27,7 @@ var Module = {
   dynamicLibraries: ["/static/unity/Development/Build.js"],
 };
 </script>
+
 <script src="/static/unity/Development/UnityLoader.js"></script>
 
 {% endblock %}

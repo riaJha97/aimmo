@@ -20,6 +20,9 @@ window.unity_startup = function () {
 
 window.unity_shutdown = function() {
   // Tear down the current unity connection if present
+  console.log("Shutting down the current unity client.");
+
+  SendMessage("World Manager", "Cleanup");
 }
 
 function SendAllConnect() {
@@ -31,7 +34,7 @@ function SendAllConnect() {
   window.unity_startup();
 }
 
-function handler(err, url, line) {s
+window.handler = function (err, url, line) {
   // We use the socket.io.js from Dependencies/socket.io.js, so this
   // error should not affect our code
   if (url.endsWith("socket.io/socket.io.js")) {

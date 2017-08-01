@@ -47,9 +47,10 @@ $( document ).ready(function() {
 
     //EVENTS
     $('#saveBtn').click(function(event) {
+        console.log("Saving game " + window.GAME_ID);
         event.preventDefault();
         $.ajax({
-            url: Urls['aimmo/code'](id=GAME_ID),
+            url: Urls['aimmo/code'](id=window.GAME_ID),
             type: 'POST',
             dataType: 'json',
             data: {code: editor.getValue(), csrfmiddlewaretoken: $('#saveForm input[name=csrfmiddlewaretoken]').val()},
@@ -63,14 +64,14 @@ $( document ).ready(function() {
         });
     });
 
-    PROGRAM_REGISTED = true;
+    window.PROGRAM_REGISTED = true;
 
-    display_code = function () {
+    window.display_code = function () {
         console.log("Sending display code request");
-        console.log(GAME_ID);
+        console.log(window.GAME_ID);
         //DISPLAY CODE
         $.ajax({
-          url: Urls['aimmo/code'](id=GAME_ID),
+          url: Urls['aimmo/code'](id=window.GAME_ID),
           type: 'GET',
           dataType: 'text',
           success: function(data) {

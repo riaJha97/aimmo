@@ -1,15 +1,15 @@
-var CONTEXT_REGISTERED = false;
-var UNITY_REGISTERED = false;
-var PROGRAM_REGISTED = false;
-var display_code = undefined;
-var unity_startup = undefined;
-var unity_shutdown = undefined;
+window.CONTEXT_REGISTERED = false;
+window.UNITY_REGISTERED = false;
+window.PROGRAM_REGISTED = false;
+window.display_code = undefined;
+window.unity_startup = undefined;
+window.unity_shutdown = undefined;
 
 //context vars
-var GAME_ID = undefined;
-var GAME_URL_BASE = undefined;
-var GAME_URL_PATH = undefined;
-var VIEW_OWNER_ID = undefined;
+window.GAME_ID = undefined;
+window.GAME_URL_BASE = undefined;
+window.GAME_URL_PATH = undefined;
+window.VIEW_OWNER_ID = undefined;
 
 function send_game(id) {
   console.log("Switching to game with id " + id);
@@ -18,24 +18,24 @@ function send_game(id) {
     console.log(context);
 
     // Context setup for program
-    GAME_ID = context.game_id;
+    window.GAME_ID = context.game_id;
 
     // Context setup for watch
-    GAME_URL_BASE = context.game_url_base;
-    GAME_URL_PATH = context.game_url_path;
-    VIEW_OWNER_ID = context.view_owener_id;
+    window.GAME_URL_BASE = context.game_url_base;
+    window.GAME_URL_PATH = context.game_url_path;
+    window.VIEW_OWNER_ID = context.view_owener_id;
 
-    CONTEXT_REGISTERED = true;
+    window.CONTEXT_REGISTERED = true;
   }
 
   function update_world() {
-    if (PROGRAM_REGISTED) {
-      display_code();
+    if (window.PROGRAM_REGISTED) {
+      window.display_code();
     }
 
-    if (UNITY_REGISTERED) {
-      unity_shutdown();
-      unity_startup();
+    if (window.UNITY_REGISTERED) {
+      window.unity_shutdown();
+      window.unity_startup();
     }
   }
 

@@ -23,7 +23,6 @@ LOGGER = logging.getLogger(__name__)
 def _post_code_success_response(message):
     return _create_response("SUCCESS", message)
 
-
 def _create_response(status, message):
     response = {
         "status": status,
@@ -53,7 +52,7 @@ def code(request, id):
     if request.method == 'POST':
         avatar.code = request.POST['code']
         avatar.save()
-        return _post_code_success_response('Your code was saved!<br><br><a href="%s">Watch</a>' % reverse('aimmo/watch', kwargs={'id': game.id}))
+        return _post_code_success_response('Your code was saved!')
     else:
         return HttpResponse(avatar.code)
 

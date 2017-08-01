@@ -90,6 +90,11 @@ LOGGING = {
             'handlers': ['console'],
             'level': 'DEBUG'
         },
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
     }
 }
 

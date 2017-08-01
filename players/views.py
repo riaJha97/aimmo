@@ -87,7 +87,6 @@ def get_game(request, id):
         })
     return JsonResponse(response)
 
-
 @csrf_exempt
 @require_http_methods(['POST'])
 def mark_game_complete(request, id):
@@ -110,3 +109,26 @@ def add_game(request):
     else:
         form = forms.AddGameForm()
     return render(request, 'players/add_game.html', {'form': form})
+
+
+def _add_and_return_level(num, user):
+    game = Game(generator='Level'+num, name='Level '+num, public=False, main_user=user)
+    try:
+        game.save()
+    except ValidationError as e:
+        LOGGER.warn(e)
+        raise Http404
+    game.can_play = [user]
+    game.save()
+    level_attempt = LevelAttempt(game=game, user=user, level_number=num)
+    level_attempt.save()
+    return game
+
+@login_required
+def get_level(request, num):
+    try:
+        game = Game.objects.get(levelattempt__user=request.user, levelattempt__level_number=num)
+    except Game.DoesNotExist:
+        LOGGER.debug('Adding level')
+        game = _add_and_return_level(num, request.user)
+    return HttpResponse(game.id)

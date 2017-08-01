@@ -18,6 +18,7 @@ urlpatterns = [
     url(r'^watch/$', login_required(TemplateView.as_view(template_name='players/unity.html')), name='aimmo/watch'),
     url(r'^statistics/$', TemplateView.as_view(template_name='players/statistics.html'), name='aimmo/statistics'),
 
+    url(r'^api/games/setup/(?P<id>[0-9]+)/$', views.setup_game, name='aimmo/setup'),
     url(r'^api/level/(?P<num>[0-9]+)/$', views.get_level, name='aimmo/level'),
     url(r'^api/code/(?P<id>[0-9]+)/$', views.code, name='aimmo/code'),
     url(r'^api/games/$', views.list_games, name='aimmo/games'),

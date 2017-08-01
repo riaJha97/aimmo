@@ -132,3 +132,29 @@ def get_level(request, num):
         LOGGER.debug('Adding level')
         game = _add_and_return_level(num, request.user)
     return HttpResponse(game.id)
+
+@login_required
+def setup_game(request, id):
+    game = get_object_or_404(Game, id=id)
+    if not game.can_user_play(request.user):
+        raise Http404
+
+    context = {
+        'current_user_player_key': request.user.pk,
+        'active': game.is_active,
+        'static_data': game.static_data or '{}',
+        'game_id': game.id,
+    }
+
+    # We need to register the avatar that the user in playing with so
+    # that the Unity client can get a personalised view
+    try:
+        avatar = _find_avatar_by_game_user(game, request.user)
+        context['view_owener_id'] = avatar.owner_id
+    except Avatar.DoesNotExist:
+        pass
+
+    # Set the game path needed for the Unity client
+    context['game_url_base'], context['game_url_path'] = app_settings.GAME_SERVER_LOCATION_FUNCTION(game.id)
+
+    return JsonResponse(context)

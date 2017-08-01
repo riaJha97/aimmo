@@ -63,22 +63,27 @@ $( document ).ready(function() {
         });
     });
 
-    //DISPLAY CODE
-    $.ajax({
-        url: Urls['aimmo/code'](id=GAME_ID),
-        type: 'GET',
-        dataType: 'text',
-        success: function(data) {
+    PROGRAM_REGISTED = true;
+
+    display_code = function () {
+        console.log("Sending display code request");
+        console.log(GAME_ID);
+        //DISPLAY CODE
+        $.ajax({
+          url: Urls['aimmo/code'](id=GAME_ID),
+          type: 'GET',
+          dataType: 'text',
+          success: function(data) {
             editor.setValue(data);
             editor.selection.moveCursorFileStart();
             editor.setReadOnly(false);
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
             showAlert('Could not retrieve saved data', DANGER_CLASS);
             editor.setValue(defaultProgram);
-            editor.selection.moveCursorFileStart();
+            // editor.selection.moveCursorFileStart();
             editor.setReadOnly(true);
-        }
-    });
-
+          }
+      });
+    }
 });

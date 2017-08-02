@@ -47,3 +47,16 @@ window.handler = function (err, url, line) {
 
   return false;
 }
+
+var Module = {
+  TOTAL_MEMORY: 1000000000,
+  errorhandler: window.handler,
+  compatibilitycheck: null,
+  backgroundColor: "#222C36",
+  splashStyle: "Light",
+  dataUrl: "/static/unity/Development/Build.data",
+  codeUrl: "/static/unity/Development/UnityEngine.js",
+  asmUrl: "/static/unity/Development/UnityEngine.asm.js",
+  memUrl: "/static/unity/Development/UnityEngine.mem",
+  dynamicLibraries: ["/static/unity/Development/Build.js"],
+};

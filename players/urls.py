@@ -14,8 +14,7 @@ urlpatterns = [
     url(r'^accounts/login/$', auth_views.login),
     url(r'^admin/', admin.site.urls),
 
-    url(r'^program/$', login_required(TemplateView.as_view(template_name='players/program.html')), name='aimmo/program'),
-    url(r'^watch/$', login_required(TemplateView.as_view(template_name='players/unity.html')), name='aimmo/watch'),
+    url(r'^console/$', login_required(TemplateView.as_view(template_name='players/console.html')), name='aimmo/console'),
     url(r'^statistics/$', TemplateView.as_view(template_name='players/statistics.html'), name='aimmo/statistics'),
 
     url(r'^api/games/setup/(?P<id>[0-9]+)/$', views.setup_game, name='aimmo/setup'),

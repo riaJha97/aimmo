@@ -28,6 +28,6 @@ urlpatterns = [
     url(r'^games/new/$', views.add_game, name='aimmo/new_game'),
 
     # TODO: this is a quickfix for redirecting for the Unity resources
-    url(r'^watch/(?P<resource>.[0-9A-Za-z/.]+)$',
+    url(r'^console/(?P<resource>.[0-9A-Za-z/.]+)$',
         RedirectView.as_view(url='/static/unity/%(resource)s', permanent=False)),
 ]

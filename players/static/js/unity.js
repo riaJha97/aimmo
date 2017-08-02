@@ -49,7 +49,7 @@ window.handler = function (err, url, line) {
 }
 
 var Module = {
-  TOTAL_MEMORY: 1000000000,
+  TOTAL_MEMORY: 268435456,
   errorhandler: window.handler,
   compatibilitycheck: null,
   backgroundColor: "#222C36",

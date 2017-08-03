@@ -71,13 +71,8 @@ $(document).ready(function(){
 
     if (ACTIVE) {
         var socket = io.connect(GAME_URL_BASE, { path: GAME_URL_PATH });
-<<<<<<< HEAD
-        socket.on('world-init'), funciton(msg) {
-            worldInit(msg);
-=======
         socket.on('world-init'), function() {
             worldInit();
->>>>>>> e57334b... Create / Delete / Update players using the new update-based API.
         }
 
         socket.on('world-update', function(msg) {

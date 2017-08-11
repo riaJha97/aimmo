@@ -1,4 +1,4 @@
-# AI:MMO 
+# AI:MMO
 A **M**assively **M**ulti-player **O**nline game, where players create **A**rtificially **I**ntelligent programs to play on their behalf.
 
 ## A [Code for Life](https://www.codeforlife.education/) project

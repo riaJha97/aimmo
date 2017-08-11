@@ -100,10 +100,10 @@ class WorldState():
             for player in game_state.avatar_manager.avatars:
                 self.update_player(player_dict(player))
 
-            for player in game_state.avatar_manager.avatars_to_create:
+            for player in game_state.avatar_manager.avatars_to_create():
                 self.create_player(player_dict(player))
 
-            for player in game_state.avatar_manager.avatars_to_delete:
+            for player in game_state.avatar_manager.avatars_to_delete():
                 self.delete_player(player_dict(player))
 
             # Refresh map features dictionary.

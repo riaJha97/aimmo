@@ -49,3 +49,7 @@ class AvatarManager(object):
         self.avatars_to_delete_by_id = {}
 
         return avatars_to_delete_array
+
+    @property
+    def active_avatars(self):
+        return [player for player in self.avatars]

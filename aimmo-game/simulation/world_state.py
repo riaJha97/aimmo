@@ -38,8 +38,6 @@ class WorldState():
         }
         self.clear_updates()
 
-        #print("--------------------------------------------")
-        #print(updates)
         return updates
 
     def clear_updates(self):
@@ -123,16 +121,3 @@ class WorldState():
                 if cell.generates_score:
                     self.create_map_feature(MapFeature.SCORE_POINT.value, map_feature_dict(cell))
                     cell.created = True
-
-
-
-# TODO: Implement pickups
-"""
-def get_pickups_list(world):
-    pickups = []
-    for cell in world.pickup_cells():
-        pickup = cell.pickup.serialise()
-        pickup['location'] = (cell.location.x, cell.location.y)
-        pickups.append(pickup)
-    return pickups
-"""

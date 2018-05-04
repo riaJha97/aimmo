@@ -9,7 +9,7 @@ const outDir = Path.join(__dirname, '../players/static/react')
 const options = {
   outDir,
   outFile: 'index.html',
-  publicUrl: './',
+  publicUrl: '/static/react',
   watch: process.env.NODE_ENV !== 'production'
 }
 
@@ -20,7 +20,7 @@ const bundler = new Bundler(file, options)
 bundler.on('bundled', (bundle) => {
   let entryPointHTML = shell.cat(bundle.name).stdout
   entryPointHTML = '{% load static %}\n' + entryPointHTML
-  entryPointHTML = entryPointHTML.replace(/(<script src=")(.*\.js)("><\/script>)/g, '$1{% static "react/$2" %}$3')
+  // entryPointHTML = entryPointHTML.replace(/(<script src=")(.*\.js)("><\/script>)/g, '$1{% static "react/$2" %}$3')
   fs.writeFile(`${templateFolder}/game_ide.html`, entryPointHTML, (error) => {
     if (error) { return console.log(error) }
     console.log('game_ide.html django template generated sucessfully')

@@ -3,19 +3,24 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { actions } from 'features/Editor'
+import submit from './run-code.svg'
 
 const IDEMenuLayout = styled.nav`
   background-color: pink
   grid-area: ide-menu
+`
+const PostCodeButton = styled.input`
+  float: right
+  position: relative
+  top: 18%
+  right: 8%
 `
 
 export class IDEMenu extends Component {
   render () {
     return (
       <IDEMenuLayout>
-        <button
-          id='post-code-button'
-          onClick={this.props.postCode} >Post Code</button>
+        <PostCodeButton type='image' src={submit} id='post-code-button' onClick={this.props.postCode} />
       </IDEMenuLayout>
     )
   }

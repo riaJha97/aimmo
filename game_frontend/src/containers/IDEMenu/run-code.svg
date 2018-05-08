@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="58px" viewBox="0 0 148 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>run-code-btn</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="140" height="50" rx="25"></rect>
+        <filter x="-5.0%" y="-10.0%" width="110.0%" height="128.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MVP-Nav-spilt-Large-screen-12-04-18" transform="translate(-591.000000, -20.000000)">
+            <g id="Code-side">
+                <g id="run-code-btn" transform="translate(595.000000, 22.000000)">
+                    <g id="Rectangle-12">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#E06C03" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <rect stroke="#FFFFFF" stroke-width="1" x="0.5" y="0.5" width="139" height="49" rx="24.5"></rect>
+                    </g>
+                    <text id="Run-code" font-family="Helvetica-Bold, Helvetica" font-size="18" font-weight="bold" fill="#FFFFFF">
+                        <tspan x="18" y="32">Run code</tspan>
+                        <tspan x="100.001953" y="32" font-family="Helvetica-Light, Helvetica" font-weight="300"> </tspan>
+                        <tspan x="105.005953" y="32" font-family="LucidaGrande, Lucida Grande" font-weight="normal">→</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

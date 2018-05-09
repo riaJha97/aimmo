@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { actions } from 'features/Editor'
+import Button from 'components/Button'
 
 const IDEMenuLayout = styled.nav`
   background-color: pink
@@ -13,9 +14,11 @@ export class IDEMenu extends Component {
   render () {
     return (
       <IDEMenuLayout>
-        <button
+        <Button
           id='post-code-button'
-          onClick={this.props.postCode} >Post Code</button>
+          onClick={this.props.postCode} >
+          Post Code
+        </Button>
       </IDEMenuLayout>
     )
   }

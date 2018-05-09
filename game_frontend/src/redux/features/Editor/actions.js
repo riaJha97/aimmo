@@ -45,11 +45,25 @@ const keyPressed = code => (
   }
 )
 
+const zoomInRequest = () => (
+  {
+    type: types.ZOOM_IN_REQUEST
+  }
+)
+
+const zoomOutRequest = () => (
+  {
+    type: types.ZOOM_OUT_REQUEST
+  }
+)
+
 export default {
   getCodeRequest,
   getCodeReceived,
   postCodeRequest,
   postCodeReceived,
   changeCode,
-  keyPressed
+  keyPressed,
+  zoomInRequest,
+  zoomOutRequest
 }

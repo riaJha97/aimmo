@@ -29,10 +29,31 @@ const PostCodeButton = styled.input`
   
 `
 
+const ZoomButton = styled.input`
+  
+  margin-left: 5%
+  width: 10%
+
+  :focus {
+    outline: 0
+  }
+ 
+  :hover {
+    filter: brightness(85%)
+  }
+    
+   :active {
+    filter: brightness(75%)
+  }
+  
+`
+
 export class IDEMenu extends Component {
   render () {
     return (
       <IDEMenuLayout>
+        <ZoomButton type="button" onClick={this.props.zoomIn} />
+        <ZoomButton type="button" onClick={this.props.zoomOut} />
         <PostCodeButton type='image' src={submit} id='post-code-button' onClick={this.props.postCode} />
       </IDEMenuLayout>
     )
@@ -40,12 +61,16 @@ export class IDEMenu extends Component {
 }
 
 IDEMenu.propTypes = {
+  zoomIn: PropTypes.func,
+  zoomOut: PropTypes.func,
   postCode: PropTypes.func
 }
 
 const mapStateToProps = () => ({})
 
 const mapDispatchToProps = {
+  zoomIn: actions.zoomInRequest,
+  zoomOut: actions.zoomOutRequest,
   postCode: actions.postCodeRequest
 }
 

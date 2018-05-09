@@ -12,7 +12,8 @@ const initialState = {
     movies: []
   },
   editor: {
-    code: ''
+    code: '',
+    textSize: 14
   }
 }
 const reduxStore = configureStore(initialState)

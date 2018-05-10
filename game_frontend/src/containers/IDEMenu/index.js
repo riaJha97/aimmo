@@ -10,25 +10,6 @@ const IDEMenuLayout = styled.nav`
   background-color: pink
   grid-area: ide-menu
 `
-const PostCodeButton = styled.input`
-  float: right
-  position: relative
-  top: 18%
-  right: 8%
-  
-  :focus {
-    outline: 0
-  }
- 
-  :hover {
-    filter: brightness(85%)
-  }
-    
-   :active {
-    filter: brightness(75%)
-  }
-  
-`
 
 export class IDEMenu extends Component {
   render () {

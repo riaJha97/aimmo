@@ -10,8 +10,10 @@ const IDEMenuLayout = styled.nav`
   grid-area: ide-menu
 `
 const ZoomButton = Button.extend`
+  position: relative
   margin-left: 5%
-  width: 10% 
+  width: 10%
+  top: 18%
 `
 const PostCodeButton = Button.extend`
   float: right
@@ -20,16 +22,30 @@ const PostCodeButton = Button.extend`
   right: 5% 
 `
 
+const TestButton = Button.extend`
+    position: relative
+    float: left
+    margin-left: 5%
+    top: 10%
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200%
+`
+
 export class IDEMenu extends Component {
   render () {
     return (
       <IDEMenuLayout>
-        <ZoomButton secondary onClick={this.props.zoomIn} />
-        <ZoomButton secondary onClick={this.props.zoomOut} />
+        <TestButton secondary onClick={this.props.zoomIn}> + </TestButton>
+        <TestButton secondary onClick={this.props.zoomOut}> - </TestButton>
         <PostCodeButton primary
           id='post-code-button'
           onClick={this.props.postCode} >
-          Post Code
+          Run Code
         </PostCodeButton>
       </IDEMenuLayout>
     )

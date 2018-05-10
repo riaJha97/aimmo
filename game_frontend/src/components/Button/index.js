@@ -4,14 +4,14 @@ import styled from 'styled-components'
 const Button = styled.button`
   background-color: ${props => props.primary ? '#f37300' : '#6b686b'};
   color: ${props => props.primary ? 'black' : 'white'};
-  border-radius: 200px;
+  border-radius: ${props => props.primary ? '200px' : '50%'};
   border-width: 0px;
   font-size: 14px;
   margin: 8px;
   padding: 4px 8px;
   position: relative;
   box-sizing: border-box;
-  min-width: 64px;
+  min-width: ${props => props.primary ? '64' : '45px'};
   height: 36px;
   border: none;
   outline: none;
@@ -44,5 +44,4 @@ const Button = styled.button`
     filter: brightness(120%);
   }
 `
-
 export default Button

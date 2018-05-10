@@ -23,7 +23,7 @@ export class IDEEditor extends Component {
           name='ace_editor'
           onLoad={this.props.getCode}
           onChange={this.props.editorChanged}
-          fontSize={14}
+          fontSize={this.props.textSize}
           showPrintMargin
           showGutter
           highlightActiveLine
@@ -49,7 +49,8 @@ IDEEditor.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  code: state.editor.code
+  code: state.editor.code,
+  textSize: state.editor.textSize
 })
 
 const mapDispatchToProps = {

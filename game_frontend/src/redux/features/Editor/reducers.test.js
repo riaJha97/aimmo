@@ -22,4 +22,26 @@ describe('editorReducer', () => {
     const action = actions.changeCode('class Avatar')
     expect(editorReducer({}, action)).toEqual(expectedState)
   })
+
+  it('should handle ZOOM_IN_REQUEST', () => {
+    const stateBeforeReducing = {
+      textSize: 14
+    }
+    const expectedState = { 
+      textSize: 16
+    }
+    const action = actions.zoomInRequest()
+    expect(editorReducer(stateBeforeReducing, action)).toEqual(expectedState)
+  })
+
+  it('should handle ZOOM_OUT_REQUEST', () => {
+    const stateBeforeReducing = {
+      textSize: 14
+    }
+    const expectedState = { 
+      textSize: 12
+    }
+    const action = actions.zoomOutRequest()
+    expect(editorReducer(stateBeforeReducing, action)).toEqual(expectedState)
+  })
 })

@@ -8,6 +8,16 @@ const editorReducer = (state = {}, action) => {
         ...state,
         code: action.payload.code
       }
+    case types.ZOOM_IN_REQUEST:
+      return {
+        ...state,
+        textSize: state.textSize += 2
+      }
+    case types.ZOOM_OUT_REQUEST:
+      return {
+        ...state,
+        textSize: state.textSize -= 2
+      }
     default:
       return state
   }

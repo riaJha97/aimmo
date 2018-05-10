@@ -5,33 +5,48 @@ import { connect } from 'react-redux'
 import { actions } from 'features/Editor'
 import Button from 'components/Button'
 
-
 const IDEMenuLayout = styled.nav`
   background-color: pink
   grid-area: ide-menu
+`
+const ZoomButton = Button.extend`
+  margin-left: 5%
+  width: 10% 
+`
+const PostCodeButton = Button.extend`
+  float: right
+  position: relative
+  top: 18%
+  right: 5% 
 `
 
 export class IDEMenu extends Component {
   render () {
     return (
       <IDEMenuLayout>
-        <Button
+        <ZoomButton secondary onClick={this.props.zoomIn} />
+        <ZoomButton secondary onClick={this.props.zoomOut} />
+        <PostCodeButton primary
           id='post-code-button'
           onClick={this.props.postCode} >
           Post Code
-        </Button>
+        </PostCodeButton>
       </IDEMenuLayout>
     )
   }
 }
 
 IDEMenu.propTypes = {
+  zoomIn: PropTypes.func,
+  zoomOut: PropTypes.func,
   postCode: PropTypes.func
 }
 
 const mapStateToProps = () => ({})
 
 const mapDispatchToProps = {
+  zoomIn: actions.zoomInRequest,
+  zoomOut: actions.zoomOutRequest,
   postCode: actions.postCodeRequest
 }
 

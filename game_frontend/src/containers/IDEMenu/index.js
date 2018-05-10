@@ -15,11 +15,15 @@ const ZoomButton = Button.extend`
   width: 10%
   top: 18%
 `
+
 const PostCodeButton = Button.extend`
   float: right
   position: relative
-  top: 18%
-  right: 5% 
+  top: 10%
+  right: 5%
+  padding: 10px 8px 10px 8px
+  height: 55%
+  font-size: 22px
 `
 
 const TestButton = Button.extend`

@@ -11,7 +11,7 @@ const Button = styled.button`
   padding: 4px 8px;
   position: relative;
   box-sizing: border-box;
-  min-width: ${props => props.primary ? '64' : '45px'};
+  min-width: ${props => props.primary ? '64px' : '45px'};
   height: 36px;
   border: none;
   outline: none;
@@ -33,6 +33,7 @@ const Button = styled.button`
 
   &:hover {
     filter: brightness(110%);
+    cursor: pointer;
   }
 
   &:hover:after {

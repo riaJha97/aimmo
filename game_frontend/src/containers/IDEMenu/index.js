@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { actions } from 'features/Editor'
-import submit from './run-code.svg'
+import Button from 'components/Button'
+
 
 const IDEMenuLayout = styled.nav`
   background-color: pink
@@ -33,7 +34,11 @@ export class IDEMenu extends Component {
   render () {
     return (
       <IDEMenuLayout>
-        <PostCodeButton type='image' src={submit} id='post-code-button' onClick={this.props.postCode} />
+        <Button
+          id='post-code-button'
+          onClick={this.props.postCode} >
+          Post Code
+        </Button>
       </IDEMenuLayout>
     )
   }

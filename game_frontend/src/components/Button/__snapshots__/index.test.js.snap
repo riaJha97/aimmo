@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<IDEMenu /> renders correctly 1`] = `
-.c1 {
+exports[`<Button /> renders correctly 1`] = `
+.c0 {
   background-color: #6b686b;
   color: white;
   border-radius: 200px;
@@ -20,7 +20,7 @@ exports[`<IDEMenu /> renders correctly 1`] = `
   transition: all 0.3s ease-in-out;
 }
 
-.c1:after {
+.c0:after {
   position: absolute;
   top: 0;
   left: 0;
@@ -34,35 +34,22 @@ exports[`<IDEMenu /> renders correctly 1`] = `
   transition: opacity 0.3s ease-in-out;
 }
 
-.c1:hover {
+.c0:hover {
   -webkit-filter: brightness(110%);
   filter: brightness(110%);
 }
 
-.c1:hover:after {
+.c0:hover:after {
   opacity: 1;
 }
 
-.c1:active {
+.c0:active {
   box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
   -webkit-filter: brightness(120%);
   filter: brightness(120%);
 }
 
-.c0 {
-  background-color: pink;
-  grid-area: ide-menu;
-}
-
-<nav
+<button
   className="c0"
->
-  <button
-    className="c1"
-    id="post-code-button"
-    onClick={undefined}
-  >
-    Post Code
-  </button>
-</nav>
+/>
 `;

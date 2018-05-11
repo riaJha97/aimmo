@@ -11,8 +11,8 @@ const Button = styled.button`
   padding: 4px 8px;
   position: relative;
   box-sizing: border-box;
-  min-width: ${props => props.primary ? '64px' : '45px'};
-  height: 36px;
+  min-width: ${props => props.primary ? '64px' : '50px'};
+  height: ${props => props.primary ? '36px' : '50px'};
   border: none;
   outline: none;
   box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);

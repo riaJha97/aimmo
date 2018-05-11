@@ -8,6 +8,7 @@ import Button from 'components/Button'
 const IDEMenuLayout = styled.nav`
   background-color: pink
   grid-area: ide-menu
+  padding-left: 20px
 `
 const ZoomButton = Button.extend`
   position: relative
@@ -19,37 +20,29 @@ const ZoomButton = Button.extend`
 const PostCodeButton = Button.extend`
   float: right
   position: relative
+  width: 150px
   top: 10%
   right: 5%
   padding: 10px 8px 10px 8px
   height: 55%
-  font-size: 22px
+  font-size: 20px
 `
 
 const TestButton = Button.extend`
     position: relative
     float: left
-    margin-left: 5%
-    top: 10%
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 200%
 `
-
 export class IDEMenu extends Component {
   render () {
     return (
       <IDEMenuLayout>
         <TestButton secondary onClick={this.props.zoomIn}> + </TestButton>
-        <TestButton secondary onClick={this.props.zoomOut}> - </TestButton>
+        <TestButton secondary onClick={this.props.zoomOut}> &#8211; </TestButton>
         <PostCodeButton primary
           id='post-code-button'
           onClick={this.props.postCode} >
-          Run Code
+          Run Code &#8594;
         </PostCodeButton>
       </IDEMenuLayout>
     )
